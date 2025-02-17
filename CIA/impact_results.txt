@@ -1,0 +1,79 @@
+
+Contemporaneous Impact Results:
+
+Target Stock: AAPL
+R² Score: 0.0631
+Impact Coefficients:
+AAPL: 0.000095
+AMGN: 0.000008
+TSLA: -0.000048
+JPM: -0.000023
+XOM: -0.000002
+
+Target Stock: AMGN
+R² Score: 0.0826
+Impact Coefficients:
+AAPL: -0.000063
+AMGN: 0.000098
+TSLA: -0.000020
+JPM: 0.000021
+XOM: 0.000004
+
+Target Stock: TSLA
+R² Score: 0.0993
+Impact Coefficients:
+AAPL: -0.000012
+AMGN: -0.000017
+TSLA: 0.000228
+JPM: -0.000218
+XOM: -0.000006
+
+Target Stock: JPM
+R² Score: 0.0148
+Impact Coefficients:
+AAPL: -0.000011
+AMGN: -0.000000
+TSLA: 0.000005
+JPM: 0.000034
+XOM: 0.000005
+
+Target Stock: XOM
+R² Score: 0.0479
+Impact Coefficients:
+AAPL: -0.000034
+AMGN: -0.000024
+TSLA: -0.000066
+JPM: 0.000040
+XOM: 0.000015
+
+Predictive Impact Results:
+
+Target Stock: AAPL
+1-minute horizon:
+R² Score: 0.0048
+5-minute horizon:
+R² Score: 0.0361
+
+Target Stock: AMGN
+1-minute horizon:
+R² Score: 0.0124
+5-minute horizon:
+R² Score: 0.0135
+
+Target Stock: TSLA
+1-minute horizon:
+R² Score: 0.0063
+5-minute horizon:
+R² Score: 0.0055
+
+Target Stock: JPM
+1-minute horizon:
+R² Score: 0.0051
+5-minute horizon:
+R² Score: 0.0151
+
+Target Stock: XOM
+1-minute horizon:
+R² Score: 0.0072
+5-minute horizon:
+R² Score: 0.0200
