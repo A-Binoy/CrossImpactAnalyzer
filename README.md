@@ -32,8 +32,7 @@ Key components of the project:
   - **Cumulative impact plots**
  
 ## Overall Interpretation
-Contemporaneous analysis: Stocks mainly influence themselves, with minor effects from others.
-Predictive analysis: The predictability of stock prices using this method is very weak, especially at the 1-minute horizon.
+Stocks mainly influence themselves, with minor effects from others. The predictability of stock prices using this method is very weak, especially at the 1-minute horizon.
 Low R² values across all stocks suggest that these stocks do not have strong short-term predictive power over each other.
 Predictability increases slightly over 5 minutes, meaning very short-term trading strategies using these stocks might not be very effective.
 
