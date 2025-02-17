@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project analyzes high-frequency equity market data to compute **Order Flow Imbalance (OFI) metrics** across multiple levels of the **Limit Order Book (LOB)** and assess **cross-asset impacts** on short-term price changes. The methodology follows the paper **"Cross-Impact of Order Flow Imbalance in Equity Markets."**
+This project analyzes high-frequency equity market data to compute **Order Flow Imbalance (OFI) metrics** across multiple levels of the **Limit Order Book (LOB)** and assess **cross-asset impacts** on short-term price changes. The methodology follows the paper **"Cross-Impact of Order Flow Imbalance in Equity Markets."** The paper used Level 2 order book data, I developed an **innovative proxy** using volume imbalance to approximate order flow patterns.
 
 Key components of the project:
 - Computation of **multi-level OFI metrics**
