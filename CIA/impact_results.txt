@@ -2,78 +2,78 @@
 Contemporaneous Impact Results:
 
 Target Stock: AAPL
-R² Score: 0.0631
+R² Score: 0.0001
 Impact Coefficients:
-AAPL: 0.000095
-AMGN: 0.000008
-TSLA: -0.000048
-JPM: -0.000023
-XOM: -0.000002
+AAPL: -0.000001
+AMZN: -0.000001
+GOOG: 0.000000
+INTC: 0.000000
+MSFT: -0.000000
 
-Target Stock: AMGN
-R² Score: 0.0826
+Target Stock: AMZN
+R² Score: 0.0001
 Impact Coefficients:
-AAPL: -0.000063
-AMGN: 0.000098
-TSLA: -0.000020
-JPM: 0.000021
-XOM: 0.000004
+AAPL: 0.000001
+AMZN: -0.000000
+GOOG: -0.000006
+INTC: -0.000001
+MSFT: 0.000000
 
-Target Stock: TSLA
-R² Score: 0.0993
+Target Stock: GOOG
+R² Score: 0.0001
 Impact Coefficients:
-AAPL: -0.000012
-AMGN: -0.000017
-TSLA: 0.000228
-JPM: -0.000218
-XOM: -0.000006
+AAPL: 0.000001
+AMZN: 0.000000
+GOOG: -0.000001
+INTC: -0.000002
+MSFT: -0.000000
 
-Target Stock: JPM
-R² Score: 0.0148
+Target Stock: INTC
+R² Score: 0.0000
 Impact Coefficients:
-AAPL: -0.000011
-AMGN: -0.000000
-TSLA: 0.000005
-JPM: 0.000034
-XOM: 0.000005
+AAPL: -0.000001
+AMZN: 0.000000
+GOOG: -0.000001
+INTC: 0.000000
+MSFT: 0.000001
 
-Target Stock: XOM
-R² Score: 0.0479
+Target Stock: MSFT
+R² Score: 0.0000
 Impact Coefficients:
-AAPL: -0.000034
-AMGN: -0.000024
-TSLA: -0.000066
-JPM: 0.000040
-XOM: 0.000015
+AAPL: -0.000003
+AMZN: -0.000000
+GOOG: 0.000001
+INTC: -0.000000
+MSFT: -0.000001
 
 Predictive Impact Results:
 
 Target Stock: AAPL
 1-minute horizon:
-R² Score: 0.0048
+R² Score: 0.0000
 5-minute horizon:
-R² Score: 0.0361
+R² Score: 0.0000
 
-Target Stock: AMGN
+Target Stock: AMZN
 1-minute horizon:
-R² Score: 0.0124
+R² Score: 0.0002
 5-minute horizon:
-R² Score: 0.0135
+R² Score: 0.0001
 
-Target Stock: TSLA
+Target Stock: GOOG
 1-minute horizon:
-R² Score: 0.0063
+R² Score: 0.0001
 5-minute horizon:
-R² Score: 0.0055
+R² Score: 0.0000
 
-Target Stock: JPM
+Target Stock: INTC
 1-minute horizon:
-R² Score: 0.0051
+R² Score: 0.0001
 5-minute horizon:
-R² Score: 0.0151
+R² Score: 0.0000
 
-Target Stock: XOM
+Target Stock: MSFT
 1-minute horizon:
-R² Score: 0.0072
+R² Score: 0.0001
 5-minute horizon:
-R² Score: 0.0200
+R² Score: 0.0000
