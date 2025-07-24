@@ -1,38 +1,75 @@
-# Cross-Impact Analysis of Order Flow Imbalance in Equity Markets
+# CrossImpactAnalyzer
 
-## Overview
+**Quantitative Modeling of Trading Signals using Cross-Impact and Order Flow Imbalance**
 
-This project analyzes high-frequency equity market data to compute **Order Flow Imbalance (OFI) metrics** across multiple levels of the **Limit Order Book (LOB)** and assess **cross-asset impacts** on short-term price changes. The methodology follows the paper **"Cross-Impact of Order Flow Imbalance in Equity Markets."** The paper used Level 2 order book data, I developed an **innovative proxy** using volume imbalance to approximate order flow patterns.
+[![Project Slides](https://github.com/A-Binoy/CrossImpactAnalyzer/blob/main/CIA/Highlights.pdf)  | 🔗 [Original Paper](https://doi.org/10.1080/14697688.2023.2236159)
 
-Key components of the project:
-- Computation of **multi-level OFI metrics**
-- Analysis of **cross-impact** between stocks
-- Regression-based **quantification** of impact relationships
-- **Visualization** of findings through time series, heatmaps, and predictive power plots
+---
 
-## Task Description
+## 📌 Overview
 
-### 1. Compute OFI Metrics
-- Derive **multi-level OFI metrics** (up to 5 levels) for each stock.
-- Integrate these metrics using **Principal Component Analysis (PCA)** or another **dimensionality reduction method**.
+This project explores whether **cross-asset order flow imbalance (OFI)** can be used to generate **predictive trading signals** in equity markets. Inspired by the work of Cont, Cucuringu, and Zhang (2023) [[1]](#references), we replicate core findings using real Level 2 data from the LOBSTER dataset and test a long-only strategy based on OFI signal strength.
 
-### 2. Analyze Cross-Impact
-- Assess **contemporaneous cross-impact** of OFI on short-term price changes across stocks.
-- Evaluate the **predictive power** of lagged cross-asset OFI on **future price changes** (e.g., 1-minute and 5-minute horizons).
+Key questions explored:
 
-### 3. Quantify Results
-- Use **regression models** to assess the **explanatory power** of contemporaneous and lagged OFI.
-- Compare **self-impact** (within the same stock) vs. **cross-impact** (between stocks).
+- Can cross-impact coefficients be reliably estimated?
+- Do lagged OFI signals have predictive power?
+- Can we translate this signal into profitable trades?
 
-### 4. Visualization and Reporting
-- Generate **visualizations** to illustrate relationships:
-  - **OFI time series** for each stock
-  - **Cross-impact heatmap**
-  - **Predictive power analysis**
-  - **Cumulative impact plots**
- 
-## Overall Interpretation
-Stocks mainly influence themselves, with minor effects from others. The predictability of stock prices using this method is very weak, especially at the 1-minute horizon.
-Low R² values across all stocks suggest that these stocks do not have strong short-term predictive power over each other.
-Predictability increases slightly over 5 minutes, meaning very short-term trading strategies using these stocks might not be very effective.
+---
+
+## 🧠 Core Idea
+
+**Order Flow Imbalance (OFI)** quantifies net buying/selling pressure using limit order book dynamics.  
+This project:
+- Constructs a PCA-based **integrated OFI** from multi-level LOB data.
+- Builds cross-sectional regression models to study **contemporaneous** and **predictive** cross-impact.
+- Simulates a trading strategy that takes long positions when integrated OFI exceeds the 70th percentile.
+
+---
+
+## ⚙️ Methods
+
+- **Data**: LOBSTER message and orderbook files for 5 Nasdaq stocks: `AAPL`, `AMZN`, `GOOG`, `INTC`, `MSFT`
+- **Signal Construction**:
+  - Parse Level 2 LOB data using C++ (`ofi_tools.cpp`) via Pybind11.
+  - Compute per-level OFI and apply PCA to obtain an integrated OFI per stock.
+- **Modeling**:
+  - Linear regression for cross-impact estimation.
+  - Strategy: go long on stocks with high lagged OFI (top 30%).
+
+---
+
+## 📈 Results
+
+- 📊 **R² scores** for contemporaneous cross-impact were high for self-impact, but weak for other stocks — consistent with theory.
+- ⏱️ **Predictive power** of OFI was significantly higher at 1-minute horizons than at 5-minute.
+- 💸 Strategy based on top-30% OFI signals yielded **~7% cumulative return** over the test period.
+
+See [impact_results.txt](./impact_results.txt) for full regression outputs.
+
+---
+
+## 📊 Visualizations
+
+| Figure | Description |
+|--------|-------------|
+| ![cumulative_pnl](./cumulative_pnl.png) | Cumulative returns from the OFI-based strategy |
+| ![cross_impact_heatmap](./cross_impact_heatmap.png) | Heatmap of cross-impact coefficients |
+| ![predictive_power](./predictive_power.png) | Predictive R² at 1m and 5m horizons |
+| ![pnl_high_vs_low_ofi_AAPL](./pnl_high_vs_low_ofi_AAPL.png) | AAPL PnL in high vs low OFI periods |
+| ![pnl_vs_ofi_AMZN](./pnl_vs_ofi_AMZN.png) | Scatter of AMZN PnL vs lagged OFI |
+| ... | (See `/Viz` folder for full set) |
+
+---
+
+## 🔬 Future Work
+
+- Test cross-impact in **sector-specific portfolios** (e.g., tech vs energy).
+- Incorporate **transaction costs** and slippage models.
+- Add **multi-horizon** signals and expand to full S&P100.
+- Explore **non-linear models** (e.g., Random Forests) for capturing nonlinear OFI effects.
+
+---
+
 
